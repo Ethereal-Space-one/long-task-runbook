@@ -1,26 +1,18 @@
 ---
 name: long-task-runbook
-description: Plan, execute, resume, or independently review multi-stage tasks that span sessions or handoffs. Use when work needs bounded task packets, recoverable checkpoints, or evidence-based acceptance before the next stage.
+description: Plan, execute, resume, or independently review multi-stage work across sessions and handoffs. Use when a fresh agent must identify the assigned task and working copy, verify prior results, and continue to an agreed stopping point.
 ---
 
 # 长程任务
 
-用项目中的实际状态推进任务。交接后，新的执行者应能定位当前授权、输入、已验收成果、证据与下一步。领域规范继续定义交付物和验收方法。
+让接手者能回答三个问题：**这次接哪一包、哪份成果已经验过、从哪一步继续？** 单次能完成的小改动直接做并验证；不为套用本技能另建台账或安排审核。
 
-## 选择当前工作
-
-| 当前请求 | 操作 |
+| 本轮请求 | 从哪里开始 |
 | --- | --- |
-| 规划或准备指派 | 读[任务拆分与指派](references/task-packets.md)。优先复用项目的接手入口、任务记录和审核标准。按用户要求完成规划、模板或首包 Prompt |
-| 已授权执行或续跑 | 读[状态恢复与复核](references/recovery-and-review.md)的恢复部分。先重建当前状态，再推进获派范围 |
-| 审查、返修或验收 | 读[状态恢复与复核](references/recovery-and-review.md)的复核部分。依据原件和验收条件作出判定 |
+| 规划、拆包或准备指派 | 读[任务拆分与指派](references/task-packets.md)。交付计划或可执行的任务包，不把规划当作开工指令。 |
+| 执行、续跑或换人接手 | 读[从检查点恢复](references/recovery-and-review.md#从检查点恢复)。在写入前核实本轮任务、实际工作副本和候选版本。 |
+| 审查、返修或验收 | 读[复核和验收](references/recovery-and-review.md#复核和验收)。用对应候选版本的原始回执作判断；只审查时不顺手返修。 |
 
-## 运行一个任务包
+在适用权限内，从用户当前指派取得范围和停止点，从工作副本取得事实，从验证回执取得结论。三者不能互相代替。检查点可以指向下一步，但不能授权推送、发布或其他外部操作。
 
-1. 核对当前用户指派、任务范围、前置结果和停止点。规划请求交付可接手的计划，执行请求按已授权范围推进。任务文件用于定位状态和证据，授权来自用户及适用规则。
-2. 确认实际输入、工作位置、正在写入的文件和可复用的结果。发现版本或范围不一致时，先定位影响。保护用户及其他执行者的工作。
-3. 在任务包内连续完成可做的工作、检查和返修。遇到局部阻断时记录具体影响，继续不依赖它的事项。使用子 agent 时遵循当前任务授权与环境能力，按交付范围分工。
-4. 将实际成果、证据、未完成项和下一步写回当前检查点。已写稿、已验证、已验收和已发布分别按实际状态记录。用户要求独立审核时，以独立审核记录作为对应验收依据。
-5. 按当前停止点交付或继续。若用户授权了整个流程，完成已满足条件的后续步骤。若下一阶段另有约定的指派或审批，交回具体可审核结果和仍缺的决定。
-
-有中断风险时，优先保存一个能直接恢复的下一动作及其证据位置。已有项目记录足够时直接更新。依赖时间、命令或工具结果的说法，以实际观测为准。
+在包内连续完成已授权且依赖满足的工作；局部受阻时保留现场，继续无关项。需要交接时，更新已有检查点，留下成果位置、最近一次核验和一条能立即执行的下一步。如果只许读取，就在回复中交回这些信息，不写项目文件。到约定点停；整段流程已授权时，不为普通阶段切换重复请示。
