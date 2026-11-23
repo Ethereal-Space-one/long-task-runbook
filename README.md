@@ -4,6 +4,18 @@
 
 ## 安装
 
+### 用 Skills CLI 安装（推荐）
+
+在目标项目根目录运行，按提示选择你实际使用的 Agent，并选择 `Project` 安装范围：
+
+```bash
+npx skills add Ethereal-Space-one/long-task-runbook --skill long-task-runbook
+```
+
+[在 skills.sh 查看该 Skill](https://www.skills.sh/ethereal-space-one/long-task-runbook/long-task-runbook)
+
+### 手动安装 ZIP
+
 从 [Releases](https://github.com/Ethereal-Space-one/long-task-runbook/releases/latest) 下载 `long-task-runbook` ZIP。解压后，把含有 `SKILL.md` 和 `references/` 的整个 `long-task-runbook/` 放进对应目录，不要只复制入口文件。
 
 | 工具 | 用户级技能目录 | 在新会话中调用 |
